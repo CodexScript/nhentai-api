@@ -412,9 +412,10 @@ constructor(options={}){let params=function processOptions({hosts:{api:api="nhen
    * Search by query.
    * @param {string} query    Query.
    * @param {number} [page=1] Page ID.
+   * @param {string} [sort=popular]		Search type.
    * @returns {Promise<Search>} Search instance.
    * @async
-   */async search(query,page=1){let{host:host,apiPath:apiPath}=this.getAPIArgs("api","search"),search=Search.parse(await this.request({host:host,path:apiPath(query,page)}));return search.page=page,search}
+   */async search(query,page=1,sort="popular"){let{host:host,apiPath:apiPath}=this.getAPIArgs("api","search"),search=Search.parse(await this.request({host:host,path:apiPath(query,page,sort)}));return search.page=page,search}
 /**
    * Search related books.
    * @param {number|Book} book Book instance or Book ID.
@@ -448,9 +449,10 @@ constructor(options={}){let params=function processOptions({hosts:{api:api="nhen
    * Search by query endpoint.
    * @param {string} query    Search query.
    * @param {number} [page=1] Page ID.
+   * @param {string} [sort=popular] Search type.
    * @returns {string} URL path.
    */
-static search(query,page=1){return`/api/galleries/search?query=${query}&page=${page}`}
+static search(query,page=1,sort="popular"){return`/api/galleries/search?query=${query}&page=${page}&sort=${sort}`}
 /**
    * Search by tag endpoint.
    * @param {number} tagID    Tag ID.

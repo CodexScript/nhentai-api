@@ -30,6 +30,7 @@ class APIPath {
 	 * Search by query endpoint.
 	 * @param {string} query    Search query.
 	 * @param {number} [page=1] Page ID.
+	 * @param {string} [sort=popular] Search type.
 	 * @returns {string} URL path.
 	 */
 	static search(query, page = 1, sort = 'popular') {
@@ -211,6 +212,7 @@ class API {
 	 * Search by query.
 	 * @param {string} query    Query.
 	 * @param {number} [page=1] Page ID.
+	 * @param {string} [sort=popular]		Search type.
 	 * @returns {Promise<Search>} Search instance.
 	 * @async
 	 */
