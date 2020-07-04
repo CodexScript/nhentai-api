@@ -1,5 +1,4 @@
 {
-	"type": "module",
 	"main": "./dist/cjs/bundle.js",
 	"exports": {
 		".": {
