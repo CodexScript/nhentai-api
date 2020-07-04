@@ -32,8 +32,8 @@ class APIPath {
 	 * @param {number} [page=1] Page ID.
 	 * @returns {string} URL path.
 	 */
-	static search(query, page = 1) {
-		return `/api/galleries/search?query=${query}&page=${page}`;
+	static search(query, page = 1, sort = 'popular') {
+		return `/api/galleries/search?query=${query}&page=${page}&sort=${sort}`;
 	}
 
 	/**
