@@ -214,12 +214,12 @@ class API {
 	 * @returns {Promise<Search>} Search instance.
 	 * @async
 	 */
-	async search(query, page = 1) {
+	async search(query, page = 1, sort = 'popular') {
 		let { host, apiPath, } = this.getAPIArgs('api', 'search'),
 			search = Search.parse(
 				await this.request({
 					host,
-					path: apiPath(query, page),
+					path: apiPath(query, page, sort),
 				})
 			);
 
